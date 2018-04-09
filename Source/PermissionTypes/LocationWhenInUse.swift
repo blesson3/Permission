@@ -22,7 +22,7 @@
 // SOFTWARE.
 //
 
-#if PERMISSION_LOCATION
+//#if PERMISSION_LOCATION
 import CoreLocation
 
 internal extension Permission {
@@ -47,4 +47,4 @@ internal extension Permission {
         LocationManager.request(self)
     }
 }
-#endif
+//#endif

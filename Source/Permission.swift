@@ -36,23 +36,23 @@ open class Permission: NSObject {
     open static let addressBook = Permission(type: .addressBook)
     #endif
     
-    #if PERMISSION_LOCATION
+//    #if PERMISSION_LOCATION
     /// The permission to access the user's location when the app is in background.
     open static let locationAlways = Permission(type: .locationAlways)
     
     /// The permission to access the user's location when the app is in use.
     open static let locationWhenInUse = Permission(type: .locationWhenInUse)
-    #endif
+//    #endif
     
     #if PERMISSION_MICROPHONE
     /// The permission to access the microphone.
     open static let microphone = Permission(type: .microphone)
     #endif
     
-    #if PERMISSION_CAMERA
+//    #if PERMISSION_CAMERA
     /// The permission to access the camera.
     open static let camera = Permission(type: .camera)
-    #endif
+//    #endif
     
     #if PERMISSION_PHOTOS
     /// The permission to access the user's photos.
@@ -97,7 +97,7 @@ open class Permission: NSObject {
     open static let siri = Permission(type: .siri)
     #endif
 
-    #if PERMISSION_NOTIFICATIONS
+//    #if PERMISSION_NOTIFICATIONS
     /// The permission to send notifications.
     open static let notifications: Permission = {
         let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
@@ -130,7 +130,7 @@ open class Permission: NSObject {
         _notifications = permission
         return permission
     }
-    #endif
+//    #endif
     
     /// The permission domain.
     open let type: PermissionType
@@ -145,22 +145,22 @@ open class Permission: NSObject {
         if case .addressBook = type { return statusAddressBook }
         #endif
         
-        #if PERMISSION_LOCATION
+//        #if PERMISSION_LOCATION
         if case .locationAlways    = type { return statusLocationAlways }
         if case .locationWhenInUse = type { return statusLocationWhenInUse }
-        #endif
+//        #endif
         
-        #if PERMISSION_NOTIFICATIONS
+//        #if PERMISSION_NOTIFICATIONS
         if case .notifications = type { return statusNotifications }
-        #endif
+//        #endif
         
         #if PERMISSION_MICROPHONE
         if case .microphone = type { return statusMicrophone }
         #endif
         
-        #if PERMISSION_CAMERA
+//        #if PERMISSION_CAMERA
         if case .camera = type { return statusCamera }
-        #endif
+//        #endif
         
         #if PERMISSION_PHOTOS
         if case .photos = type { return statusPhotos }
@@ -273,7 +273,7 @@ open class Permission: NSObject {
         }
         #endif
         
-        #if PERMISSION_LOCATION
+//        #if PERMISSION_LOCATION
         if case .locationAlways    = type {
             requestLocationAlways(callback)
             return
@@ -283,14 +283,14 @@ open class Permission: NSObject {
             requestLocationWhenInUse(callback)
             return
         }
-        #endif
+//        #endif
         
-        #if PERMISSION_NOTIFICATIONS
+//        #if PERMISSION_NOTIFICATIONS
         if case .notifications = type {
             requestNotifications(callback)
             return
         }
-        #endif
+//        #endif
         
         #if PERMISSION_MICROPHONE
         if case .microphone = type {
@@ -299,12 +299,12 @@ open class Permission: NSObject {
         }
         #endif
         
-        #if PERMISSION_CAMERA
+//        #if PERMISSION_CAMERA
         if case .camera = type {
             requestCamera(callback)
             return
         }
-        #endif
+//        #endif
         
         #if PERMISSION_PHOTOS
         if case .photos = type {

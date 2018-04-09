@@ -31,22 +31,22 @@ public enum PermissionType {
     case addressBook // Deprecated in iOS 9.0
     #endif
     
-    #if PERMISSION_LOCATION
+//    #if PERMISSION_LOCATION
     case locationAlways
     case locationWhenInUse
-    #endif
-    
-    #if PERMISSION_NOTIFICATIONS
+//    #endif
+
+//    #if PERMISSION_NOTIFICATIONS
     case notifications(UIUserNotificationSettings)
-    #endif
+//    #endif
     
     #if PERMISSION_MICROPHONE
     case microphone
     #endif
     
-    #if PERMISSION_CAMERA
+//    #if PERMISSION_CAMERA
     case camera
-    #endif
+//    #endif
     
     #if PERMISSION_PHOTOS
     case photos
@@ -91,22 +91,22 @@ extension PermissionType: CustomStringConvertible {
         if case .addressBook = self { return "Address Book" }
         #endif
         
-        #if PERMISSION_LOCATION
+//        #if PERMISSION_LOCATION
         if case .locationAlways    = self { return "Location" }
         if case .locationWhenInUse = self { return "Location" }
-        #endif
+//        #endif
         
-        #if PERMISSION_NOTIFICATIONS
+//        #if PERMISSION_NOTIFICATIONS
         if case .notifications = self { return "Notifications" }
-        #endif
+//        #endif
         
         #if PERMISSION_MICROPHONE
         if case .microphone = self { return "Microphone" }
         #endif
         
-        #if PERMISSION_CAMERA
+//        #if PERMISSION_CAMERA
         if case .camera = self { return "Camera" }
-        #endif
+//        #endif
         
         #if PERMISSION_PHOTOS
         if case .photos = self { return "Photos" }
